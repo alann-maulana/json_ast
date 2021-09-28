@@ -57,7 +57,7 @@ enum _NumberState {
   EXP_DIGIT_OR_SIGN
 }
 
-bool _compareDynamicList(List l, List other) {
+bool _compareDynamicList(List? l, List? other) {
   if (l != null && other != null) {
     final len = l.length;
     if (len != other.length) {
@@ -108,7 +108,7 @@ class Token {
 }
 
 class ObjectNode extends Node {
-  final List<PropertyNode> children = new List<PropertyNode>();
+  final List<PropertyNode> children = <PropertyNode>[];
 
   ObjectNode() : super('Object');
 
@@ -120,7 +120,7 @@ class ObjectNode extends Node {
 }
 
 class ArrayNode extends Node {
-  final List<Node> children = new List<Node>();
+  final List<Node> children = <Node>[];
 
   ArrayNode() : super('Array');
 
@@ -132,7 +132,7 @@ class ArrayNode extends Node {
 }
 
 class PropertyNode extends Node {
-  final List<Node> children = new List<Node>();
+  final List<Node> children = <Node>[];
   int? index;
   ValueNode? key;
   Node? value;
@@ -478,7 +478,7 @@ List<Token> tokenize(String input, Settings settings) {
   int line = 1;
   int column = 1;
   int index = 0;
-  List<Token> tokens = new List<Token>();
+  List<Token> tokens = <Token>[];
 
   while (index < input.length) {
     final whitespace = parseWhitespace(input, index, line, column);
