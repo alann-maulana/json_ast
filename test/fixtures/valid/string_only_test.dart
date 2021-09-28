@@ -9,7 +9,7 @@ import '../../../lib/location.dart';
 import '../../../lib/parse.dart';
 
 final location = Location.create;
-final literal = createLiteral;
+final LiteralNode Function(dynamic, String, [Location]) literal = createLiteral;
 
 final ast = TestAST(
     literal('Some text', '"Some text"', location(1, 1, 0, 1, 12, 11)),

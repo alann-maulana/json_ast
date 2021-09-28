@@ -7,8 +7,8 @@ import '../../test_helper.dart';
 import '../../../lib/error.dart';
 import '../../../lib/parse.dart';
 
-final array = createArray;
-final literal = createLiteral;
+final ArrayNode Function(List<Node>, [Location]) array = createArray;
+final LiteralNode Function(dynamic, String, [Location]) literal = createLiteral;
 
 final ast = new TestAST(
     array([

@@ -9,7 +9,7 @@ import '../../../lib/location.dart';
 import '../../../lib/parse.dart';
 
 final location = Location.create;
-final object = createObject;
+final ObjectNode Function(List<PropertyNode>, [Location]) object = createObject;
 
 final ast = TestAST(object([], location(1, 1, 0, 1, 3, 2)), Settings());
 

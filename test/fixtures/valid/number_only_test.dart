@@ -10,7 +10,7 @@ import '../../../lib/parse.dart';
 
 final location = Location.create;
 
-final literal = createLiteral;
+final LiteralNode Function(dynamic, String, [Location]) literal = createLiteral;
 
 final ast = new TestAST(
     literal(12345, '12345', location(1, 1, 0, 1, 6, 5)), Settings());
